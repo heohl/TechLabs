@@ -11,7 +11,7 @@ tickerData=yf.Ticker(tickerSymbol)
 
 tickerDf = tickerData.history(perdiod='1d', start = '2010-5-31', end = '2021-1-21')
 
-st.line_chart(tickerDf.Low)
+st.line_chart(tickerDf.Close)
 st.line_chart(tickerDf.Volume)
 
 
