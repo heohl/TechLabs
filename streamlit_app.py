@@ -1,6 +1,7 @@
 import yfinance as yf
 import streamlit as st
 import pandas as pd 
+from datetime import date
 
 st.write(""" # Simple Stock Price App
 
@@ -9,7 +10,8 @@ tickerSymbol ='TSLA'
 
 tickerData=yf.Ticker(tickerSymbol)
 
-tickerDf = tickerData.history(perdiod='1d', start = '2010-5-31', end = '2021-1-21')
+heute=date.today()
+tickerDf = tickerData.history(perdiod='1d', start = '2010-5-31', end = heute)
 
 st.line_chart(tickerDf.Close)
 st.line_chart(tickerDf.Volume)
